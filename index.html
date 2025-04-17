@@ -4,157 +4,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galeri Ali Akbar</title>
+  <title>Selamat Datang</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      width: 100%;
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .welcome-screen {
       background: linear-gradient(to bottom, #111, #444);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .welcome-screen h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .welcome-screen p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .welcome-screen input {
-      padding: 10px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      width: 80%;
-      max-width: 300px;
-    }
-
-    .welcome-screen button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      background-color: #666;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .welcome-screen button:hover {
-      background-color: #888;
-    }
-
-    .main-content {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100vh;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-      padding: 20px;
-    }
-
-    header {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    header h2 {
-      font-size: 2rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .gallery {
-      margin-top: 40px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
     }
-
-    .gallery a {
-      text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 12px 25px;
-      border-radius: 15px;
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.1rem;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-      transition: background-color 0.3s ease;
-    }
-
-    .gallery a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    footer {
+    .container {
       text-align: center;
-      margin-top: auto;
-      padding: 10px;
-      font-size: 0.9rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 10px #000;
+      margin-bottom: 10px;
+    }
+    p {
+      font-style: italic;
+      margin-bottom: 30px;
       color: #ccc;
+    }
+    input {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      box-shadow: 0 0 10px #000;
+    }
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
-
-  <div class="welcome-screen" id="welcome">
-    <h1>Selamat Datang</h1>
-    <p>Apa kebutuhan Anda memasuki website ini?</p>
-    <input type="text" id="username" placeholder="Masukkan nama Anda..." />
-    <button onclick="enterGallery()">Masuk</button>
-  </div>
-
-  <div class="main-content" id="main">
-    <header>
-      <h2 id="greeting">Halo!</h2>
-      <p>Koleksi tangkapan layar pilihan</p>
-    </header>
-    <div class="gallery">
-      <a href="#">Screenshot 1</a>
-      <a href="#">Screenshot 2</a>
-      <a href="#">Screenshot 3</a>
-    </div>
-    <footer>&copy; 2025 Ali Akbar</footer>
+  <div class="container">
+    <h1>ada yang kangen tapi gaada obatnya</h1>
+    <p>ini yg dibilang gaptek? WKWKWK</p>
+    <input type="text" id="username" placeholder="Masukkan nama kamu" />
+    <button onclick="start()">Masuk</button>
   </div>
 
   <script>
-    function enterGallery() {
-      const name = document.getElementById('username').value.trim();
-      if (name !== "") {
-        document.getElementById('greeting').innerText = "Halo, " + name + "!";
-        document.getElementById('welcome').style.display = 'none';
-        document.getElementById('main').style.display = 'flex';
+    function start() {
+      const name = document.getElementById('username').value;
+      if (name.trim() !== "") {
+        localStorage.setItem("visitorName", name);
+        window.location.href = "home.html";
       } else {
-        alert("Silakan masukkan nama terlebih dahulu.");
+        alert("Masukkan nama dulu dong!");
       }
     }
   </script>
