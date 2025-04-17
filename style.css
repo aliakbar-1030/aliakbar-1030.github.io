@@ -1,0 +1,46 @@
+
+body.welcome {
+    background: url('../img/welcome-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+body.home {
+    background: url('../img/menu-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+}
+.header-3d {
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    animation: slideDown 2s ease-out;
+}
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+.gallery .screenshot img {
+    width: 250px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.gallery .screenshot img:hover {
+    transform: scale(0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+footer .credit {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
