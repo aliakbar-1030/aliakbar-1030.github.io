@@ -2,67 +2,83 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galeri Ali Akbar</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #ddd;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Pribadi</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #ccc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+        p.subtext {
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        .photo {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #00ffcc44;
+            max-width: 320px;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .photo:hover {
+            transform: scale(1.03);
+        }
+        .photo img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .caption {
+            margin-top: 10px;
+            color: #eee;
+        }
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
+    <h1>ada yang kangen<br>tapi gaada obatnya</h1>
+    <p class="subtext">ini yg dibilang gaptek? WKWKWK</p>
 
-  <header>
-    <h1>Galeri Ali Akbar</h1>
-    <p>Koleksi tangkapan layar pilihan</p>
-  </header>
+    <div class="gallery">
+        <div class="photo">
+            <img src="foto1.jpg" alt="Foto 1">
+            <div class="caption">Foto 1</div>
+        </div>
+        <div class="photo">
+            <img src="foto2.jpg" alt="Foto 2">
+            <div class="caption">Foto 2</div>
+        </div>
+        <div class="photo">
+            <img src="foto3.jpg" alt="Foto 3">
+            <div class="caption">Foto 3</div>
+        </div>
+        <div class="photo">
+            <img src="foto4.jpg" alt="Foto 4">
+            <div class="caption">Foto 4</div>
+        </div>
+    </div>
 
-  <div class="gallery">
-    <img src="Screenshot_2025-04-17-20-48-03.jpg" alt="Screenshot 1">
-    <img src="Screenshot_2025-04-17-20-48-10.jpg" alt="Screenshot 2">
-    <img src="Screenshot_2025-04-17-20-48-24.jpg" alt="Screenshot 3">
-  </div>
-
-  <footer>
-    &copy; 2025 Ali Akbar
-  </footer>
-
+    <footer>&copy; 2025 | Galeri Pribadi</footer>
 </body>
 </html>
