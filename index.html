@@ -2,83 +2,161 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Pribadi</title>
-    <style>
-        body {
-            background-color: #111;
-            color: #ccc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #00ffcc;
-            margin-bottom: 10px;
-        }
-        p.subtext {
-            font-style: italic;
-            color: #aaa;
-            margin-bottom: 40px;
-        }
-        .gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            align-items: center;
-        }
-        .photo {
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px #00ffcc44;
-            max-width: 320px;
-            width: 100%;
-            transition: transform 0.2s;
-        }
-        .photo:hover {
-            transform: scale(1.03);
-        }
-        .photo img {
-            width: 100%;
-            border-radius: 12px;
-        }
-        .caption {
-            margin-top: 10px;
-            color: #eee;
-        }
-        footer {
-            margin-top: 60px;
-            font-size: 0.9em;
-            color: #888;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeri Ali Akbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .welcome-screen {
+      background: linear-gradient(to bottom, #111, #444);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .welcome-screen h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-screen p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .welcome-screen input {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .welcome-screen button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #666;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .welcome-screen button:hover {
+      background-color: #888;
+    }
+
+    .main-content {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    header h2 {
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .gallery {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .gallery a {
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 12px 25px;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.1rem;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .gallery a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-    <h1>ada yang kangen<br>tapi gaada obatnya</h1>
-    <p class="subtext">ini yg dibilang gaptek? WKWKWK</p>
 
+  <div class="welcome-screen" id="welcome">
+    <h1>Selamat Datang</h1>
+    <p>Apa kebutuhan Anda memasuki website ini?</p>
+    <input type="text" id="username" placeholder="Masukkan nama Anda..." />
+    <button onclick="enterGallery()">Masuk</button>
+  </div>
+
+  <div class="main-content" id="main">
+    <header>
+      <h2 id="greeting">Halo!</h2>
+      <p>Koleksi tangkapan layar pilihan</p>
+    </header>
     <div class="gallery">
-        <div class="photo">
-            <img src="foto1.jpg" alt="Foto 1">
-            <div class="caption">Foto 1</div>
-        </div>
-        <div class="photo">
-            <img src="foto2.jpg" alt="Foto 2">
-            <div class="caption">Foto 2</div>
-        </div>
-        <div class="photo">
-            <img src="foto3.jpg" alt="Foto 3">
-            <div class="caption">Foto 3</div>
-        </div>
-        <div class="photo">
-            <img src="foto4.jpg" alt="Foto 4">
-            <div class="caption">Foto 4</div>
-        </div>
+      <a href="#">Screenshot 1</a>
+      <a href="#">Screenshot 2</a>
+      <a href="#">Screenshot 3</a>
     </div>
+    <footer>&copy; 2025 Ali Akbar</footer>
+  </div>
 
-    <footer>&copy; 2025 | Galeri Pribadi</footer>
+  <script>
+    function enterGallery() {
+      const name = document.getElementById('username').value.trim();
+      if (name !== "") {
+        document.getElementById('greeting').innerText = "Halo, " + name + "!";
+        document.getElementById('welcome').style.display = 'none';
+        document.getElementById('main').style.display = 'flex';
+      } else {
+        alert("Silakan masukkan nama terlebih dahulu.");
+      }
+    }
+  </script>
 </body>
 </html>
